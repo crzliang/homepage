@@ -49,17 +49,6 @@ nav ul li a {
     color: white;
 }
 
-/* 添加暗色遮罩，使文字更清晰 */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);  /* 黑色半透明遮罩 */
-}
-
 .hero h1,
 .hero .subtitle {
     position: relative;
