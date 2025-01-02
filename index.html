@@ -1,1 +1,100 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Crzliang的个人主页，展示了他的社交链接和常用工具。"><meta name="keywords" content="Crzliang, 个人主页, 博客, Github, bilibili"><meta name="author" content="Crzliang"><title>Crzliang · Home</title><link rel="icon" href="img/ico.png" type="image/x-icon"><script defer src="https://tongji.crzliang.cn/script.js" data-website-id="34a41204-f554-438d-b6e4-782247673ac2"></script><style>body{font-family:Arial,sans-serif;margin:0;padding:0;background:linear-gradient(135deg,#eb759a,#2575fc);color:#333;display:flex;justify-content:center;align-items:center;height:100vh}.container{text-align:center;background:rgba(255,255,255,0.4);padding:2rem;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);max-width:400px;width:90%}.avatar{width:100px;height:100px;border-radius:50%;border:2px solid #ddd;margin-bottom:1rem}.nickname{font-size:1.5rem;color:#333;margin-bottom:1rem}.social-links{display:flex;justify-content:center;gap:1rem;margin-bottom:2rem}.social-link{display:inline-block;width:50px;height:50px;overflow:hidden;transition:transform 0.3s}.social-link:hover{transform:scale(1.1)}.icon{width:100%;height:100%;object-fit:cover}.tools{text-align:center;margin-top:2rem}.tools-image{max-width:100%;height:auto;max-height:300px}footer{margin-top:2rem;font-size:0.9rem;color:#777}footer a{text-decoration:none;color:#fff}</style></head><body><div class="container"><header><img src="img/avatar.png" alt="avatar" class="avatar"><h1 class="nickname">Crzliang</h1><div class="social-links"><a href="https://blog.crzliang.cn/" target="_blank" class="social-link"><img src="img/hexo.webp" alt="hexo" class="icon"></a><a href="https://space.crzliang.cn/" target="_blank" class="social-link"><img src="img/docusaurus.webp" alt="docusaurus" class="icon"></a><a href="https://space.bilibili.com/413215603" target="_blank" class="social-link"><img src="img/Bilibili.webp" alt="Bilibili" class="icon"></a><a href="https://github.com/crzliang" target="_blank" class="social-link"><img src="img/github.webp" alt="GitHub" class="icon"></a><a href="mailto:crzliang@outlook.com" target="_blank" class="social-link"><img src="img/email.webp" alt="email" class="icon"></a></div></header><main><div class="tools"><h3>Tools&Use</h3><img src="img/tools.webp" alt="tools" class="tools-image"></div></main><footer><p>crzliang © <span id="year"></span> | <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#777;">桂ICP备2022011217号</a></p></footer><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></body></html>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crzliang的个人主页，展示了他的社交链接和常用工具。">
+    <meta name="keywords" content="Crzliang, 个人主页, 博客, Github, bilibili">
+    <meta name="author" content="Crzliang">
+    <title>Crzliang · Home</title>
+    <link rel="icon" href="img/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="https://tongji.crzliang.cn/script.js" data-website-id="34a41204-f554-438d-b6e4-782247673ac2"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#portfolio">技能工具</a></li>
+                <li><a href="#contact">联系方式</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>crzliang</h1>
+            <p class="subtitle">一个在读于GUET的CTFer</p>
+        </section>
+
+        <section id="about">
+            <h2>关于我</h2>
+            <div class="about-content">
+                <div class="profile-photo">
+                    <img src="img/avatar.webp" alt="个人照片">
+                </div>
+                <div class="about-info">
+                    <p>一个在读于GUET的CTFer。参加过一些比赛，虽然比赛成绩并不好，但也有幸参加过几次的线下组织的CTF比赛也认识了很多的大佬，也体验到了很多的新的事物。在学习安全的过程中也略微的接触了一些运维和开发的知识，组织运营了两届社团的招新以及两届校内的新生赛。</p>
+                    <div class="personal-links">
+                        <a href="https://blog.crzliang.cn/" class="link-item" target="_blank">
+                            <i class="link-icon">📝</i>
+                            <span>我的博客</span>
+                        </a>
+                        <a href="https://space.crzliang.cn/" class="link-item" target="_blank">
+                            <i class="link-icon">🎨</i>
+                            <span>我的笔记</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2>技能工具</h2>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <img src="img/tools.webp" alt="技能工具" class="tool-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>联系方式</h2>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <h3>邮箱</h3>
+                    <p>crzliang@outlook.com</p>
+                </div>
+                <div class="contact-card">
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/crzliang" target="_blank">访问我的 GitHub</a>
+                </div>
+                <div class="contact-card">
+                    <h3>哔哩哔哩</h3>
+                    <a href="https://space.bilibili.com/413215603" target="_blank">访问我的哔哩哔哩主页</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> crzliang</p>
+            <div class="beian-info">
+                <a href="https://beian.miit.gov.cn/" target="_blank">
+                    桂ICP备2022011217号
+                </a>
+                <a href="https://beian.mps.gov.cn/#/query/webSearch?code=45032302000182" rel="noreferrer" target="_blank">
+                    桂公网安备45032302000182号
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
+</body>
+</html> 
