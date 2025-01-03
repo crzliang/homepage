@@ -42,7 +42,7 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-image: url('https://img.crzliang.cn/img/202412101617891.webp');  /* 替换为您的背景图片 */
+    background-image: url('/img/bg.webp');  /* 替换为您的背景图片 */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;  /* 视差滚动效果 */
