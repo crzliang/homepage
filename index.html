@@ -1,121 +1,86 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Crzliang的个人主页，展示了他的社交链接和常用工具。">
-    <meta name="keywords" content="Crzliang, 个人主页, 博客, Github, bilibili">
     <meta name="author" content="Crzliang">
-    <title>Crzliang · Home</title>
+    <meta name="description" content="Crzliang的个人主页">
+    <title>crzliang's homepage</title>
     <link rel="icon" href="img/ico.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/styles.css">
-    <script defer src="https://tongji.crzliang.cn/script.js" data-website-id="34a41204-f554-438d-b6e4-782247673ac2"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://tongji.crzliang.cn/script.js"
+        data-website-id="34a41204-f554-438d-b6e4-782247673ac2"></script>
+    <style>
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 410px;
+            width: 100%;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .name {
+            font-family: 'Lobster', cursive;
+            font-size: 2em;
+            color: #2c3e50;
+            margin-top: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .quote {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .icp {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        .icp a {
+            text-decoration: none;
+            color: #777;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">关于我</a></li>
-                <li><a href="#portfolio">技能工具</a></li>
-                <li><a href="#contact">联系方式</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="home" class="hero">
-            <h1>crzliang</h1>
-            <p class="subtitle">一个就读于GUET的CTFer</p>
-        </section>
+<body class="bg-light d-flex justify-content-center align-items-center" style="height: 100vh; margin: 0;">
 
-        <section id="about">
-            <h2>关于我</h2>
-            <div class="about-content">
-                <div class="profile-photo">
-                    <img src="img/avatar.webp" alt="个人照片">
-                </div>
-                <div class="about-info">
-                    <p>一个在读于GUET的CTFer。参加过一些比赛，虽然比赛成绩并不好，但也有幸参加过几次的线下组织的CTF比赛也认识了很多的大佬，也体验到了很多的新的事物。在学习安全的过程中也略微的接触了一些运维和开发的知识，组织运营了两届社团的招新以及两届校内的新生赛。</p>
-                    <div class="personal-links">
-                        <a href="https://blog.crzliang.cn/" class="link-item" target="_blank">
-                            <i class="link-icon">📝</i>
-                            <span>我的博客</span>
-                        </a>
-                        <a href="https://space.crzliang.cn/" class="link-item" target="_blank">
-                            <i class="link-icon">🎨</i>
-                            <span>我的笔记</span>
-                        </a>
-                    </div>
-                </div>
+    <div class="container">
+        <img src="img/avatar.webp alt="头像" class="avatar img-fluid">
+        <h3 class="name">crzliang</h3>
+        <div class="quote">只要开始追赶，就已经在胜利的路上</div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <a href="https://blog.crzliang.cn" target="_blank" class="btn w-100"
+                    style="background-color: #6c9fce; color: black;">博客</a>
             </div>
-        </section>
-
-        <section id="portfolio">
-            <h2>技能工具</h2>
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <i class="tool-icon"><!-- 这里可以使用字体图标或图片 --></i>
-                    <h3>开发工具&系统</h3>
-                    <img src="img/tools.webp" alt="开发工具" class="tool-image">
-                </div>
-                <div class="tool-item">
-                    <i class="tool-icon"></i>
-                    <h3>编程语言&框架</h3>
-                    <img src="img/lang.webp" alt="编程语言" class="tool-image">
-                </div>
-                <div class="tool-item">
-                    <i class="tool-icon"></i>
-                    <h3>常用工具</h3>
-                    <img src="img/other.webp" alt="常用工具" class="tool-image">
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>联系方式</h2>
-            <div class="contact-cards">
-                <div class="contact-card">
-                    <h3>邮箱</h3>
-                    <p>crzliang@outlook.com</p>
-                </div>
-                <div class="contact-card">
-                    <h3>GitHub</h3>
-                    <a href="https://github.com/crzliang" target="_blank">访问我的 GitHub</a>
-                </div>
-                <div class="contact-card">
-                    <h3>哔哩哔哩</h3>
-                    <a href="https://space.bilibili.com/413215603" target="_blank">访问我的哔哩哔哩主页</a>
-                </div>
-                <div class="contact-card">
-                    <h3>网易云音乐</h3>
-                    <a href="https://music.163.com/#/user/home?id=424374691" target="_blank">访问我的网易云音乐主页</a>
-                </div>
-                <div class="contact-card">
-                    <h3>微博</h3>
-                    <a href="https://weibo.com/u/5214353597" target="_blank">访问我的微博主页</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; <span id="year"></span> crzliang</p>
-            <div class="beian-info">
-                <a href="https://beian.miit.gov.cn/" target="_blank">
-                    桂ICP备2022011217号
-                </a>
-                <a href="https://beian.mps.gov.cn/#/query/webSearch?code=45032302000182" rel="noreferrer" target="_blank">
-                    桂公网安备45032302000182号
-                </a>
+            <div class="col-md-6 mb-3">
+                <a href="https://space.crzliang.cn" target="_blank" class="btn w-100"
+                    style="background-color: #c8eae0; color: black;">笔记</a>
             </div>
         </div>
-    </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-      </script>
+        <div class="icp"><a href="https://beian.miit.gov.cn/" target="_blank">桂ICP备2022011217号</a> | <a
+                href="https://beian.mps.gov.cn/#/query/webSearch?code=45032302000182"
+                target="_blank">桂公网安备45032302000182号</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+
+</html>
