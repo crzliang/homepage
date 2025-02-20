@@ -189,6 +189,27 @@ ul {
 .record-link {
     color: #323232;
     text-decoration: none;
-    font-size: 12px;
+}
+
+@media (max-width: 480px) {
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nickname {
+        font-size: 2em;
+    }
+
+    .social-link {
+        width: 250px;
+        padding: 12px 30px;
+    }
+
+    .record-link {
+        color: #323232;
+        text-decoration: none;
+        font-size: 12px;
+    }
 }
 </style>
