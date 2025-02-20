@@ -1,24 +1,30 @@
-# homepage
+# 描述
 
-## Project setup
-```
-npm install
-```
+这是一个使用 Vue 3 构建的个人主页项目，展示了个人信息、社交链接以及备案信息。主页包含 GitHub、博客和笔记的链接以及个人电子邮箱。
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# 安装与使用
 
-### Compiles and minifies for production
-```
-npm run build
-```
+1. 安装依赖：
 
-### Lints and fixes files
-```
-npm run lint
-```
+   ```sh
+   npm install
+   ```
+2. 启动开发服务器：
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+   ```sh
+   npm run serve
+   ```
+3. 构建生产环境代码：
+
+   ```sh
+   npm run build
+   ```
+4. 代码格式检查与修复：
+
+   ```sh
+   npm run lint
+   ```
+
+# 相关链接
+
+- [Vue官网](https://vuejs.org/)

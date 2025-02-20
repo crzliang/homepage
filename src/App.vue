@@ -37,8 +37,9 @@ export default {
             quote: "只要开始追赶，就已经在胜利的路上",
             socialLinks: {
                 GitHub: "https://github.com/crzliang",
-                Blog: "https://blog.crzliang.cn/",
-                Notes: "https://space.crzliang.cn/"
+                博客: "https://blog.crzliang.cn/",
+                笔记: "https://space.crzliang.cn/",
+                'crzliang@outlook.com':"mailto:crzliang@outlook.com"
             },
             icpInfo: "桂ICP备2022011217号",
             icpLink: "https://beian.miit.gov.cn/",
@@ -51,10 +52,12 @@ export default {
             switch (platform) {
                 case "GitHub":
                     return "fab fa-github";
-                case "Blog":
+                case "博客":
                     return "fas fa-blog";
-                case "Notes":
+                case "笔记":
                     return "fas fa-archive";
+                case "crzliang@outlook.com":
+                    return "fas fa-envelope";
                 default:
                     return "fas fa-share-alt";
             }
@@ -167,7 +170,7 @@ ul {
     width: 300px;
     margin: 0 auto;
     position: relative;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 .social-link i {
