@@ -32,7 +32,7 @@ export default {
     name: "App",
     data() {
         return {
-            avatar: "avatar.webp",
+            avatar: "assets/img/avatar.webp",
             nickname: "crzliang",
             quote: "只要开始追赶，就已经在胜利的路上",
             socialLinks: {
@@ -73,7 +73,10 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@font-face {
+    font-family: 'Pacifico-Regular';
+    src: url('@/assets/fonts/Pacifico-Regular.ttf') format('truetype');
+}
 
 .app-container {
     display: flex;
@@ -84,7 +87,7 @@ export default {
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     text-align: center;
-    background-image: url('/public/avatar.webp');
+    background: linear-gradient(135deg, #ff6f91 0%, #845ec2 100%);
     background-size: cover;
     background-position: center;
 }
@@ -98,7 +101,7 @@ export default {
     height: 100%;
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .header {
@@ -112,7 +115,7 @@ export default {
 }
 
 .nickname {
-    font-family: 'Lobster', cursive;
+    font-family: 'Pacifico-Regular', cursive;
     font-size: 3em;
     color: #333;
     margin-top: 10px;
