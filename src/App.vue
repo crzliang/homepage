@@ -167,6 +167,7 @@ ul {
     width: 300px;
     margin: 0 auto;
     position: relative;
+    border-radius: 25px;
 }
 
 .social-link i {
