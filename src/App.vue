@@ -39,7 +39,6 @@ export default {
                 GitHub: "https://github.com/crzliang",
                 博客: "https://blog.crzliang.cn/",
                 笔记: "https://space.crzliang.cn/",
-                'crzliang@outlook.com':"mailto:crzliang@outlook.com"
             },
             icpInfo: "桂ICP备2022011217号",
             icpLink: "https://beian.miit.gov.cn/",
@@ -55,9 +54,7 @@ export default {
                 case "博客":
                     return "fas fa-blog";
                 case "笔记":
-                    return "fas fa-archive";
-                case "crzliang@outlook.com":
-                    return "fas fa-envelope";
+                    return "fas fa-book";
                 default:
                     return "fas fa-share-alt";
             }
