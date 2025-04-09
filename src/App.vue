@@ -5,8 +5,9 @@
       <div class="rounded-xl bg-slate-100 p-6 shadow-neumorphic">
         <!-- 头像 -->
         <div class="mb-5 flex justify-center">
-          <div class="w-32 h-32 rounded-full p-1 shadow-neumorphic-inset">
-            <img :src="profile.avatar" :alt="profile.name" 
+          <div class="w-32 h-32 rounded-full p-1">
+            <div v-if="!profile.avatar" class="skeleton-avatar"></div>
+            <img v-else :src="profile.avatar" :alt="profile.name" 
                  class="w-full h-full rounded-full object-cover">
           </div>
         </div>
@@ -113,7 +114,7 @@ const psb = ref({
 }
 /* 添加 Neumorphism 阴影 */
 .shadow-neumorphic {
-  box-shadow: 8px 8px 16px #c7c7c7, -8px -8px 16px #ffffff;
+  box-shadow: 4px 4px 8px #c7c7c7, -4px -4px 8px #ffffff; /* 简化阴影 */
 }
 .shadow-neumorphic-inset {
   box-shadow: inset 5px 5px 10px #c7c7c7, inset -5px -5px 10px #ffffff;
