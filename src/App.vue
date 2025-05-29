@@ -1,46 +1,47 @@
 <template>
-  <div class="min-h-screen bg-slate-100 px-4 flex items-center justify-center">
-    <div class="max-w-xs mx-auto">
-      <!-- 拟物化卡片 -->
-      <div class="rounded-xl bg-slate-100 p-6 shadow-neumorphic">
-        <!-- 头像 -->
-        <div class="mb-5 flex justify-center">
-          <div class="w-32 h-32 rounded-full p-1">
-            <div v-if="!profile.avatar" class="skeleton-avatar"></div>
-            <img v-else :src="profile.avatar" :alt="profile.name" 
-                 class="w-full h-full rounded-full object-cover">
-          </div>
-        </div>
-        
-        <!-- 个人信息 -->
-        <div class="text-center mb-5">
-          <h1 class="nickname">{{ profile.name }}</h1>
-          <p class="quote">{{ profile.bio }}</p>
-        </div>
-        
-        <!-- 标签 -->
-        <div class="flex flex-wrap justify-center gap-2 mb-6">
-          <span v-for="tag in profile.tags" 
-                :key="tag"
-                class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full shadow-neumorphic-sm">
-            {{ tag }}
-          </span>
-        </div>
-        
-        <!-- 社交链接 -->
-        <div class="flex justify-center space-x-4">
-          <a v-for="social in socialLinks" 
-             :key="social.name"
-             :href="social.url" 
-             class="w-10 h-10 rounded-full flex items-center justify-center text-slate-500 bg-slate-100 shadow-neumorphic hover:shadow-neumorphic-inset transition-shadow duration-300"
-             :title="social.name"
-             target="_blank"
-             rel="noopener noreferrer">
-            <i :class="['fab', social.icon, 'text-lg']"></i>
-          </a>
+  <div class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- 模糊化头像背景 -->
+    <div v-if="profile.avatar" class="absolute inset-0 z-0 flex items-center justify-center select-none pointer-events-none">
+      <img :src="profile.avatar" :alt="profile.name" class="w-full h-full object-cover blur-2xl scale-125 opacity-80" />
+      <div class="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
+    </div>
+    <div class="max-w-xs mx-auto relative z-10">
+      <!-- 头像 -->
+      <div class="mb-5 flex justify-center">
+        <div class="w-36 h-36 rounded-full">
+          <div v-if="!profile.avatar" class="skeleton-avatar"></div>
+          <img v-else :src="profile.avatar" :alt="profile.name" 
+               class="w-full h-full rounded-full object-cover">
         </div>
       </div>
       
+      <!-- 个人信息 -->
+      <div class="text-center mb-5">
+        <h1 class="nickname">{{ profile.name }}</h1>
+        <p class="quote">{{ profile.bio }}</p>
+      </div>
+      
+      <!-- 标签 -->
+      <div class="flex flex-wrap justify-center gap-2 mb-6">
+        <span v-for="tag in profile.tags" 
+              :key="tag"
+              class="text-xs text-slate-500 bg-white/70 px-3 py-1 rounded-full">
+          {{ tag }}
+        </span>
+      </div>
+      
+      <!-- 社交链接 -->
+      <div class="flex justify-center space-x-4">
+        <a v-for="social in socialLinks" 
+           :key="social.name"
+           :href="social.url" 
+           class="w-10 h-10 rounded-full flex items-center justify-center text-slate-500 bg-white/70 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg"
+           :title="social.name"
+           target="_blank"
+           rel="noopener noreferrer">
+          <i :class="['fab', social.icon, 'text-lg']"></i>
+        </a>
+      </div>
       <!-- ICP备案信息 -->
       <div class="mt-6 text-center space-x-4">
         <a :href="icp.url" 
@@ -80,11 +81,11 @@ const socialLinks = ref([
     url: 'https://blog.crzliang.cn/',
     icon: 'fas fa-blog'
   },
-  {
-    name: 'Note',
-    url: 'https://space.crzliang.cn/',
-    icon: 'fas fa-book' // 替换微信为Dribbble，更适合这种设计风格
-  }
+  // {
+  //   name: 'Note',
+  //   url: 'https://space.crzliang.cn/',
+  //   icon: 'fas fa-book' // 替换微信为Dribbble，更适合这种设计风格
+  // }
 ])
 
 const icp = ref({
@@ -112,9 +113,9 @@ const psb = ref({
   font-style: italic;
   margin-top: 15px;
 }
-/* 添加 Neumorphism 阴影 */
+/* 保留阴影相关样式但页面已不再使用 */
 .shadow-neumorphic {
-  box-shadow: 4px 4px 8px #c7c7c7, -4px -4px 8px #ffffff; /* 简化阴影 */
+  box-shadow: 4px 4px 8px #c7c7c7, -4px -4px 8px #ffffff;
 }
 .shadow-neumorphic-inset {
   box-shadow: inset 5px 5px 10px #c7c7c7, inset -5px -5px 10px #ffffff;
