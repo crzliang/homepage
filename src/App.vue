@@ -43,13 +43,14 @@
         </a>
       </div>
       <!-- ICP备案信息 -->
-      <div class="mt-6 text-center space-x-4">
+      <div class="mt-6 text-center">
         <a :href="icp.url" 
            target="_blank" 
            class="text-xs text-slate-400 hover:text-slate-600 transition-colors"
            rel="noopener noreferrer">
           {{ icp.number }}
         </a>
+        <br />
         <a :href="psb.url" 
            target="_blank" 
            class="text-xs text-slate-400 hover:text-slate-600 transition-colors"
