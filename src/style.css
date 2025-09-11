@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Tailwind 自定义工具：确保生成 .bg-hero（直接设置背景图像） */
+@layer utilities {
+    .bg-hero {
+        background-image: url('/img/bg.jpg');
+    }
+}
+
 /* 全局重置：去除 body 默认外边距并使用 border-box 计算，减少因 padding/margin 导致的溢出 */
 html,
 body,
@@ -19,22 +26,19 @@ body,
 
 /* 重新设计的全局样式 */
 :root {
-    /* 仅保留浅色主题变量（全站使用浅色配色） */
-    --bg-1: #f8fafc;
-    /* slate-50 */
-    --bg-2: #e6eef6;
-    /* soft blue-gray */
-    --card-bg: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(2, 6, 23, 0.06);
-    --accent: #6d28d9;
-    /* purple-700 */
-    --muted: rgba(2, 6, 23, 0.85);
-    --muted-2: rgba(75, 85, 99, 0.75);
-    --bg-image: url('/img/bg.jpg');
-    /* 可设置为 url('/img/bg.jpg') 来启用背景图 */
+    --bg-1: #0f172a;
+    /* slate-900 */
+    --bg-2: #0b1220;
+    /* deep navy */
+    --card-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --accent: #7c3aed;
+    /* purple-600 */
+    --muted: rgba(255, 255, 255, 0.92);
+    --muted-2: rgba(148, 163, 184, 0.9);
 }
 
-/* removed runtime theme switching - site uses the light variables in :root */
+/* 浅色主题已移除；默认保留深色主题变量 */
 
 html,
 body,
@@ -44,45 +48,34 @@ body,
 
 /* 页面背景：细腻的渐变 + 通过伪元素实现的模糊图形 */
 .min-h-screen {
-    /* 支持可选背景图（位于最底层）+ 两个模糊径向图形和渐变叠加 */
-    background-image: var(--bg-image),
-        radial-gradient(1000px 400px at 10% 10%, rgba(124, 58, 237, 0.08), transparent 10%),
-        radial-gradient(800px 300px at 90% 80%, rgba(14, 165, 233, 0.04), transparent 10%),
-        linear-gradient(180deg, var(--bg-1), var(--bg-2));
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-position: center, 10% 10%, 90% 80%, center;
-    background-size: cover, 1000px 400px, 800px 300px, auto;
+    /* 背景由 Tailwind 的 bg-hero / bg-center / bg-cover 控制；保留深色回退色 */
+    background-color: var(--bg-1);
     position: relative;
     overflow: hidden;
 }
 
-/* 浅色主题的较浅背景渐变以保留细腻层次 */
-/* 将浅色背景样式留在默认 .min-h-screen 中（变量已为浅色） */
+/* 浅色主题样式已删除；.min-h-screen 的主要背景规则位于上方并已包含图片与渐变 */
 
-/* 居中卡片样式 */
-.profile-card {
-    position: relative; /* for pseudo-element */
-    background-color: var(--card-bg);
-    background-clip: padding-box;
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(12px) saturate(150%);
-    -webkit-backdrop-filter: blur(12px) saturate(150%);
-    padding: 2.25rem 1.5rem;
-    /* 恢复为默认较安全的内距，避免在小屏产生滚动 */
-    border-radius: 16px;
-    box-shadow: 0 12px 40px rgba(2, 6, 23, 0.55);
-    overflow: hidden;
-}
-
-/* 细微高光层，增强毛玻璃质感 */
-.profile-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    pointer-events: none;
-    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-    mix-blend-mode: overlay;
+/* 居中卡片样式（放到 Tailwind 的 components layer，避免构建/清理时丢失） */
+@layer components {
+    .profile-card {
+        /* 透明背景（保证能看到后面的内容以启用 backdrop-filter） */
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+        /* 明确提供一个半透明回退色，某些构建/压缩器或浏览器在没有明确透明背景时可能不会渲染毛玻璃 */
+        background-color: var(--card-bg);
+        /* 当带有边框时，确保背景不被边框覆盖，从而更一致地显示模糊 */
+        background-clip: padding-box;
+        border: 1px solid var(--glass-border);
+        /* 先写厂商前缀，再写标准属性，兼容 Safari/旧 WebKit */
+        -webkit-backdrop-filter: blur(8px) saturate(120%);
+        backdrop-filter: blur(8px) saturate(120%);
+        /* 创建新的隔离上下文，避免被父级 stacking context 阻断 */
+        isolation: isolate;
+        padding: 2.25rem 1.5rem;
+        /* 恢复为默认较安全的内距，避免在小屏产生滚动 */
+        border-radius: 16px;
+        box-shadow: 0 10px 36px rgba(2, 6, 23, 0.6);
+    }
 }
 
 .profile-card .w-24,
@@ -221,8 +214,7 @@ body,
     }
 }
 
-/* 浅色主题下卡片的调整，以便在浅色背景上具有良好可读性 */
-/* 浅色卡片样式已通过 :root 和 .profile-card 默认样式体现 */
+/* 浅色主题下卡片样式已移除 */
 
 /* 浮动的主题切换按钮 */
 .theme-toggle {
@@ -251,6 +243,3 @@ body,
     outline: 3px solid rgba(124, 58, 237, 0.16);
     outline-offset: 3px;
 }
-
-/* 浅色主题下按钮的样式变体 */
-/* 主题切换按钮被移除，保留 .theme-toggle 样式如需复用可改造 */
