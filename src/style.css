@@ -1,3 +1,258 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
+/* 全局重置：去除 body 默认外边距并使用 border-box 计算，减少因 padding/margin 导致的溢出 */
+html,
+body,
+#app {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 重新设计的全局样式 */
+:root {
+    --bg-1: #0f172a;
+    /* slate-900 */
+    --bg-2: #0b1220;
+    /* deep navy */
+    --card-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --accent: #7c3aed;
+    /* purple-600 */
+    --muted: rgba(255, 255, 255, 0.92);
+    --muted-2: rgba(148, 163, 184, 0.9);
+}
+
+/* Light theme: applied when the html element has class `light-theme` */
+.light-theme {
+    --bg-1: #f8fafc;
+    /* slate-50 */
+    --bg-2: #e6eef6;
+    /* soft blue-gray */
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(2, 6, 23, 0.06);
+    --accent: #6d28d9;
+    /* purple-700 */
+    --muted: rgba(2, 6, 23, 0.85);
+    --muted-2: rgba(75, 85, 99, 0.75);
+}
+
+html,
+body,
+#app {
+    height: 100%;
+}
+
+/* 页面背景：细腻的渐变 + 通过伪元素实现的模糊图形 */
+.min-h-screen {
+    background: radial-gradient(1000px 400px at 10% 10%, rgba(124, 58, 237, 0.08), transparent 10%),
+        radial-gradient(800px 300px at 90% 80%, rgba(14, 165, 233, 0.04), transparent 10%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
+    position: relative;
+    overflow: hidden;
+}
+
+/* 浅色主题的较浅背景渐变以保留细腻层次 */
+.light-theme .min-h-screen {
+    background: radial-gradient(1000px 400px at 10% 10%, rgba(109, 40, 217, 0.06), transparent 10%),
+        radial-gradient(800px 300px at 90% 80%, rgba(59, 130, 246, 0.03), transparent 10%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
+}
+
+/* 居中卡片样式 */
+.profile-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    padding: 2.25rem 1.5rem;
+    /* 恢复为默认较安全的内距，避免在小屏产生滚动 */
+    border-radius: 16px;
+    box-shadow: 0 10px 36px rgba(2, 6, 23, 0.6);
+}
+
+.profile-card .w-24,
+.profile-card .w-36,
+.profile-card .w-48 {
+    margin: 0 auto;
+}
+
+.profile-card img {
+    display: block;
+    width: 360px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9999px;
+    /* 固定圆角，图片自身承担圆形裁切 */
+}
+
+/* 在较大屏幕上放大卡片内距以保留大卡片视觉 */
+@media (min-width: 768px) {
+    .profile-card {
+        padding: 3rem 2rem;
+    }
+}
+
+/* 昵称使用 Pacifico 字体（若可用） */
+@font-face {
+    font-family: 'Pacifico-Regular';
+    src: url('/fonts/Pacifico-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+.nickname {
+    font-family: 'Pacifico-Regular', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    font-size: 2rem;
+    color: var(--muted);
+    letter-spacing: 0.6px;
+}
+
+.quote {
+    color: var(--muted-2);
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* 社交按钮 - 玻璃感圆形，悬停抬起和明显的焦点样式 */
+.social-links {
+    display: flex;
+    gap: 1.75rem;
+    /* 在社交图标间添加 28px 间距 */
+}
+
+.social-links a {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--muted-2);
+    box-shadow: 0 6px 20px rgba(2, 6, 23, 0.45);
+    transition: transform .22s cubic-bezier(.2, .9, .2, 1), box-shadow .22s, background .22s;
+    text-decoration: none;
+    /* 去除社交链接下划线 */
+}
+
+.social-links a:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 14px 40px rgba(2, 6, 23, 0.6);
+    color: white;
+    background: linear-gradient(180deg, rgba(124, 58, 237, 0.14), rgba(124, 58, 237, 0.06));
+}
+
+.social-links a:focus {
+    outline: 3px solid rgba(124, 58, 237, 0.18);
+    outline-offset: 3px;
+}
+
+.social-links i {
+    font-size: 1.05rem
+}
+
+/* 元数据链接 */
+.profile-card .text-xs a {
+    color: var(--muted-2);
+    text-decoration: none;
+}
+
+.profile-card .text-xs a:hover {
+    color: var(--muted);
+    text-decoration: underline;
+}
+
+/* ICP/PSB 元数据：更小字号并略微调整间距以便紧凑显示 */
+.profile-card .metadata {
+    font-size: 0.725rem;
+    /* smaller than default text-xs (0.75rem) */
+    letter-spacing: 0.2px;
+}
+
+.profile-card .metadata p {
+    margin: 0 0;
+    /* 行间的细微垂直间距 */
+}
+
+.profile-card .metadata a,
+.profile-card .metadata a:focus,
+.profile-card .metadata a:hover {
+    text-decoration: none;
+}
+
+/* 调整社交图标与元数据之间的间距（覆盖 Tailwind 的工具类以获得更细粒度控制） */
+.profile-card .social-links {
+    margin-bottom: 1rem;
+    /* smaller than Tailwind mb-4 (1rem) */
+}
+
+/* 响应式微调 */
+@media (min-width:768px) {
+    .profile-card {
+        padding: 2.75rem 2rem;
+        border-radius: 20px;
+    }
+
+    .nickname {
+        font-size: 2.25rem;
+    }
+}
+
+/* 当用户首选减少动画时：略微禁用过渡以减少运动感 */
+@media (prefers-reduced-motion: reduce) {
+    .social-links a {
+        transition: none;
+    }
+}
+
+/* 浅色主题下卡片的调整，以便在浅色背景上具有良好可读性 */
+.light-theme .profile-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85));
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+/* 浮动的主题切换按钮 */
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--muted-2);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.45);
+    cursor: pointer;
+    transition: transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(2, 6, 23, 0.5);
+}
+
+.theme-toggle:focus {
+    outline: 3px solid rgba(124, 58, 237, 0.16);
+    outline-offset: 3px;
+}
+
+/* 浅色主题下按钮的样式变体 */
+.light-theme .theme-toggle {
+    background: rgba(2, 6, 23, 0.06);
+    color: var(--muted);
+    border: 1px solid rgba(16, 24, 40, 0.06);
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
