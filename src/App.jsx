@@ -25,7 +25,7 @@ export default function App() {
     // 保持浅色主题，不需要运行时主题切换逻辑
 
     return (
-        <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-hero bg-center bg-cover">
             {/* 固定使用浅色背景，删除主题切换按钮 */}
             <div className="max-w-md mx-auto relative z-10 profile-card">
                 {/* 主题切换按钮已移至页面右上固定浮动位置 */}
