@@ -104,7 +104,23 @@ body,
 @font-face {
     font-family: 'Pacifico-Regular';
     src: url('/fonts/Pacifico-Regular.ttf') format('truetype');
+    /* 保持 swap，以便首屏文字始终可见；可改为 `optional` 以进一步减少阻塞（tradeoff: 可能不替换回中文体） */
     font-display: swap;
+    /* 明确字体的 style/weight，有助于浏览器选择替代字体并减少布局跳动 */
+    font-style: normal;
+    font-weight: 400;
+    /* 可选：使用 font metrics override（ascent/descent/line-gap/size-adjust）
+       来使自定义字体的布局指标与回退字体一致，从而减少 CLS。
+       这是进阶优化，需要你用工具提取字体真实指标并填入百分比/数值。
+       示例（仅作示范，未经过实际测量）：
+
+    ascent-override: 90%;
+    descent-override: 10%;
+    line-gap-override: 0%;
+    size-adjust: 100%;
+
+       在不确定指标时，先不要启用上述覆盖，或把它们留在注释中以便日后填入。
+    */
 }
 
 .nickname {
