@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 const profile = {
     name: 'Crzliang',
@@ -22,44 +22,11 @@ const psb = {
 }
 
 export default function App() {
-    const [theme, setTheme] = useState(() => {
-        try {
-            return localStorage.getItem('theme') || 'dark'
-        } catch (e) {
-            return 'dark'
-        }
-    })
-
-    useEffect(() => {
-        const root = document.documentElement
-        if (theme === 'light') {
-            root.classList.add('light-theme')
-        } else {
-            root.classList.remove('light-theme')
-        }
-        try {
-            localStorage.setItem('theme', theme)
-        } catch (e) {
-        }
-    }, [theme])
-
-    function toggleTheme() {
-        setTheme(prev => (prev === 'light' ? 'dark' : 'light'))
-    }
+    // 保持浅色主题，不需要运行时主题切换逻辑
 
     return (
         <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
-            <button aria-label="切换主题" onClick={toggleTheme} className="theme-toggle" title="切换主题">
-                {theme === 'light' ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden>
-                        <path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zM1 13h3v-2H1v2zm10 9h2v-3h-2v3zm7.24-2.84l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM20 11v2h3v-2h-3zM12 5a7 7 0 100 14 7 7 0 000-14z" />
-                    </svg>
-                ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden>
-                        <path d="M21.64 13.2A9 9 0 1110.8 2.36 7 7 0 0021.64 13.2z" />
-                    </svg>
-                )}
-            </button>
+            {/* 固定使用浅色背景，删除主题切换按钮 */}
             <div className="max-w-md mx-auto relative z-10 profile-card">
                 {/* 主题切换按钮已移至页面右上固定浮动位置 */}
                 <div className="mb-6 flex justify-center">
