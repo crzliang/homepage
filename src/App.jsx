@@ -22,15 +22,11 @@ const psb = {
 }
 
 export default function App() {
-    // 保持浅色主题，不需要运行时主题切换逻辑
-
     return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-hero bg-center bg-cover">
-            {/* 固定使用浅色背景，删除主题切换按钮 */}
+        <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-hero bg-center bg-cover">
             <div className="max-w-md mx-auto relative z-10 profile-card">
-                {/* 主题切换按钮已移至页面右上固定浮动位置 */}
                 <div className="mb-6 flex justify-center">
-                    <div className="w-48 h-36 overflow-hidden">
+                    <div className="w-48 h-36 overflow-hidden avatar">
                         <img src={profile.avatar} alt={profile.name} className="w-full h-full object-cover shadow-lg rounded-full" loading="lazy" decoding="async" />
                     </div>
                 </div>
@@ -49,13 +45,19 @@ export default function App() {
                 </div>
 
                 <div className="mt-6 text-center text-xs text-slate-400 metadata">
-                    <div>
-                        <p>
-                            <a href={icp.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 transition-colors">{icp.number}</a>
-                        </p>
-                        <p>
-                            <a href={psb.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 transition-colors">{psb.number}</a>
-                        </p>
+                    <p>
+                        <a href={icp.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 transition-colors">{icp.number}</a>
+                    </p>
+                    <div className="flex items-center justify-center space-x-2">
+                        <img src="img/psb.png" alt="PSB" className="psbimg" />
+                        <a
+                            href={psb.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-slate-600 transition-colors"
+                        >
+                            &nbsp;&nbsp;{psb.number}
+                        </a>
                     </div>
                 </div>
 
