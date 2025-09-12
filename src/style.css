@@ -84,9 +84,9 @@ body,
     margin: 0 auto;
 }
 
-.profile-card img {
+.avatar img {
     display: block;
-    width: 360px;
+    width: 200px;
     height: 100%;
     object-fit: cover;
     border-radius: 9999px;
@@ -210,6 +210,12 @@ body,
     margin-bottom: 1rem;
     /* smaller than Tailwind mb-4 (1rem) */
 }
+
+.psbimg {
+    max-width: 16px;
+    height: auto;
+}
+
 
 /* 响应式微调 */
 @media (min-width:768px) {
