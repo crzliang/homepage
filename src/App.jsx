@@ -34,9 +34,6 @@ export default function App() {
                         </a>
                     ))}
                 </div>
-
-                {/* 备案信息（ICP / 公安）已移除 */}
-
             </div>
         </div>
     )
