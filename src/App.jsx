@@ -11,17 +11,6 @@ const socialLinks = [
     { name: 'Blog', url: 'https://blog.crzliang.cn/', icon: 'fas fa-blog' }
 ]
 
-const icp = {
-    url: 'https://beian.miit.gov.cn/',
-    // 备案号已移除，保持链接以便需要时查阅
-    number: ''
-}
-
-const psb = {
-    url: 'https://beian.mps.gov.cn/#/query/webSearch?code=45032302000182',
-    // 公安备案号已移除，保持链接以便需要时查阅
-    number: ''
-}
 
 export default function App() {
     return (
@@ -46,22 +35,7 @@ export default function App() {
                     ))}
                 </div>
 
-                <div className="mt-6 text-center text-xs text-slate-400 metadata">
-                    <p>
-                        <a href={icp.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 transition-colors">{/* ICP 备案信息已移除 */}</a>
-                    </p>
-                    <div className="flex items-center justify-center space-x-2">
-                        <img src="img/psb.png" alt="PSB" className="psbimg" />
-                        <a
-                            href={psb.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-slate-600 transition-colors"
-                        >
-                            {/* 公安备案信息已移除 */}
-                        </a>
-                    </div>
-                </div>
+                {/* 备案信息（ICP / 公安）已移除 */}
 
             </div>
         </div>
