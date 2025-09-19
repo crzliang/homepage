@@ -13,12 +13,14 @@ const socialLinks = [
 
 const icp = {
     url: 'https://beian.miit.gov.cn/',
-    number: '桂ICP备2022011217号'
+    // 备案号已移除，保持链接以便需要时查阅
+    number: ''
 }
 
 const psb = {
     url: 'https://beian.mps.gov.cn/#/query/webSearch?code=45032302000182',
-    number: '桂公网安备45032302000182号'
+    // 公安备案号已移除，保持链接以便需要时查阅
+    number: ''
 }
 
 export default function App() {
@@ -46,7 +48,7 @@ export default function App() {
 
                 <div className="mt-6 text-center text-xs text-slate-400 metadata">
                     <p>
-                        <a href={icp.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 transition-colors">{icp.number}</a>
+                        <a href={icp.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 transition-colors">{/* ICP 备案信息已移除 */}</a>
                     </p>
                     <div className="flex items-center justify-center space-x-2">
                         <img src="img/psb.png" alt="PSB" className="psbimg" />
@@ -56,7 +58,7 @@ export default function App() {
                             rel="noopener noreferrer"
                             className="hover:text-slate-600 transition-colors"
                         >
-                            &nbsp;&nbsp;{psb.number}
+                            {/* 公安备案信息已移除 */}
                         </a>
                     </div>
                 </div>
