@@ -11,15 +11,6 @@ const socialLinks = [
     { name: 'Blog', url: 'https://blog.crzliang.cn/', icon: 'fas fa-blog' }
 ]
 
-const icp = {
-    url: 'https://beian.miit.gov.cn/',
-    number: '桂ICP备2022011217号'
-}
-
-const psb = {
-    url: 'https://beian.mps.gov.cn/#/query/webSearch?code=45032302000182',
-    number: '桂公网安备45032302000182号'
-}
 
 export default function App() {
     return (
@@ -43,24 +34,6 @@ export default function App() {
                         </a>
                     ))}
                 </div>
-
-                <div className="mt-6 text-center text-xs text-slate-400 metadata">
-                    <p>
-                        <a href={icp.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 transition-colors">{icp.number}</a>
-                    </p>
-                    <div className="flex items-center justify-center space-x-2">
-                        <img src="img/psb.png" alt="PSB" className="psbimg" />
-                        <a
-                            href={psb.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-slate-600 transition-colors"
-                        >
-                            &nbsp;&nbsp;{psb.number}
-                        </a>
-                    </div>
-                </div>
-
             </div>
         </div>
     )

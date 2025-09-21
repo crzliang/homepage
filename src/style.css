@@ -5,7 +5,7 @@
 /* Tailwind 自定义工具：确保生成 .bg-hero（直接设置背景图像） */
 @layer utilities {
     .bg-hero {
-        background-image: url('/img/bg.jpg');
+        background-image: url('/img/bg/1.webp');
     }
 }
 
@@ -187,7 +187,7 @@ body,
     text-decoration: underline;
 }
 
-/* ICP/PSB 元数据：更小字号并略微调整间距以便紧凑显示 */
+/* 元数据：更小字号并略微调整间距以便紧凑显示 */
 .profile-card .metadata {
     font-size: 0.725rem;
     /* smaller than default text-xs (0.75rem) */
