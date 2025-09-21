@@ -8,7 +8,7 @@ const profile = {
 
 const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/crzliang', icon: 'fab fa-github' },
-    { name: 'Blog', url: 'https://blog.crzliang.cn/', icon: 'fas fa-blog' }
+    { name: 'Blog', url: 'https://blog.crzliang.com/', icon: 'fas fa-blog' }
 ]
 
 
