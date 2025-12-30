@@ -5,7 +5,7 @@
 /* Tailwind 自定义工具：确保生成 .bg-hero（直接设置背景图像） */
 @layer utilities {
     .bg-hero {
-        background-image: url('/img/bg.jpg');
+        background-image: url('/img/bg.webp');
     }
 }
 
