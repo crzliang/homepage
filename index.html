@@ -9,12 +9,24 @@
     <meta name="description" content="这是crzliang的个人主页，包含GitHub、博客和笔记的链接。">
     <meta name="keywords" content="crzliang, 个人主页, GitHub, 博客, 笔记">
     <title>个人主页</title>
-    <link rel="stylesheet" href="/font-awesome/7.0.1/css/all.min.css">
+    <!-- 预连接到统计服务域名 -->
+    <link rel="preconnect" href="https://tongji.crzliang.cn">
+    <link rel="preconnect" href="https://sdk.51.la">
+    <!-- 关键资源预加载 -->
+    <link rel="preload" href="/img/avatar.webp" as="image" type="image/webp" fetchpriority="high">
     <link rel="preload" href="/fonts/Pacifico-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="/font-awesome/7.0.1/css/all.min.css" as="style">
+    <!-- 样式表 -->
+    <link rel="stylesheet" href="/font-awesome/7.0.1/css/all.min.css">
+    <!-- 统计脚本延迟加载 -->
     <script defer src="https://tongji.crzliang.cn/script.js"
         data-website-id="34a41204-f554-438d-b6e4-782247673ac2"></script>
-    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-    <script>LA.init({ id: "KXa000yT7HQs6CIC", ck: "KXa000yT7HQs6CIC" })</script>
+    <script defer charset="UTF-8" id="LA_COLLECT" src="https://sdk.51.la/js-sdk-pro.min.js"></script>
+    <script defer>
+        window.addEventListener('load', function() {
+            LA.init({ id: "KXa000yT7HQs6CIC", ck: "KXa000yT7HQs6CIC" });
+        });
+    </script>
 </head>
 
 <body>

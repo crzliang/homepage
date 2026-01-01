@@ -27,7 +27,7 @@ export default function App() {
             <div className="max-w-md mx-auto relative z-10 profile-card">
                 <div className="mb-6 flex justify-center">
                     <div className="w-48 h-36 overflow-hidden avatar">
-                        <img src={profile.avatar} alt={profile.name} className="w-full h-full object-cover shadow-lg rounded-full" loading="lazy" decoding="async" />
+                        <img src={profile.avatar} alt={profile.name} className="w-full h-full object-cover shadow-lg rounded-full" fetchpriority="high" decoding="async" />
                     </div>
                 </div>
 
@@ -38,25 +38,25 @@ export default function App() {
 
                 <div className="flex justify-center space-x-6 mb-4 social-links">
                     {socialLinks.map(social => (
-                        <a key={social.name} href={social.url} className="w-10 h-10 rounded-full flex items-center justify-center text-slate-500 bg-white/70 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg" title={social.name} target="_blank" rel="noopener noreferrer">
+                        <a key={social.name} href={social.url} className="w-12 h-12 rounded-full flex items-center justify-center text-slate-500 bg-white/70 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg" title={social.name} target="_blank" rel="noopener noreferrer">
                             <i className={`${social.icon} text-lg`} />
                         </a>
                     ))}
                 </div>
 
                 <div className="mt-6 text-center text-xs text-slate-400 metadata">
-                    <p>
-                        <a href={icp.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 transition-colors">{icp.number}</a>
+                    <p className="py-2">
+                        <a href={icp.url} target="_blank" rel="noopener noreferrer" className="inline-block py-2 px-4 hover:text-slate-600 transition-colors">{icp.number}</a>
                     </p>
-                    <div className="flex items-center justify-center space-x-2">
+                    <div className="flex items-center justify-center space-x-2 py-2">
                         <img src="img/psb.png" alt="PSB" className="psbimg" />
                         <a
                             href={psb.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-slate-600 transition-colors"
+                            className="inline-block py-2 px-4 hover:text-slate-600 transition-colors"
                         >
-                            &nbsp;&nbsp;{psb.number}
+                            {psb.number}
                         </a>
                     </div>
                 </div>
