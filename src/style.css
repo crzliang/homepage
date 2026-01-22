@@ -48,8 +48,7 @@ body,
 
 /* 页面背景：细腻的渐变 + 通过伪元素实现的模糊图形 */
 .min-h-screen {
-    /* 背景由 Tailwind 的 bg-hero / bg-center / bg-cover 控制；保留深色回退色 */
-    background-color: var(--bg-1);
+    /* 背景由 Tailwind 的 bg-hero / bg-center / bg-cover 控制 */
     position: relative;
     overflow: hidden;
 }
@@ -131,7 +130,7 @@ body,
 }
 
 .quote {
-    color: var(--muted-2);
+    color: #000;
     margin-top: 0.5rem;
     font-size: 0.95rem;
     font-style: italic;

@@ -49,7 +49,7 @@ export default function App() {
                         <a href={icp.url} target="_blank" rel="noopener noreferrer" className="inline-block py-2 px-4 hover:text-slate-600 transition-colors">{icp.number}</a>
                     </p>
                     <div className="flex items-center justify-center space-x-2 py-2">
-                        <img src="img/psb.png" alt="PSB" className="psbimg" />
+                        {/* <img src="img/psb.png" alt="PSB" className="psbimg" /> */}
                         <a
                             href={psb.url}
                             target="_blank"
