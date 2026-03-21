@@ -3,7 +3,7 @@ import React from 'react'
 const profile = {
     name: 'Crzliang',
     bio: '只要开始追赶，就已经在胜利的路上',
-    avatar: 'img/avatar.webp'
+    // avatar: 'img/avatar.webp'
 }
 
 const socialLinks = [
@@ -23,13 +23,9 @@ const psb = {
 
 export default function App() {
     return (
-        <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-hero bg-center bg-cover">
-            <div className="max-w-md mx-auto relative z-10 profile-card">
-                <div className="mb-6 flex justify-center">
-                    <div className="w-48 h-36 overflow-hidden avatar">
-                        <img src={profile.avatar} alt={profile.name} className="w-full h-full object-cover shadow-lg rounded-full" fetchpriority="high" decoding="async" />
-                    </div>
-                </div>
+        <div className="h-screen w-full flex items-end justify-center md:items-stretch md:justify-start relative overflow-hidden bg-hero bg-center bg-cover">
+            <div className="w-full md:w-[300px] shrink-0 relative z-10 profile-card rounded-t-3xl rounded-b-none border-t border-b-0 border-x-0 md:rounded-none md:rounded-r-3xl md:border-t-0 md:border-r md:border-l-0 flex flex-col justify-center items-center !px-6">
+
 
                 <div className="text-center mb-5">
                     <h1 className="nickname">{profile.name}</h1>
@@ -38,24 +34,19 @@ export default function App() {
 
                 <div className="flex justify-center space-x-6 mb-4 social-links">
                     {socialLinks.map(social => (
-                        <a key={social.name} href={social.url} className="w-12 h-12 rounded-full flex items-center justify-center text-slate-500 bg-white/70 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg" title={social.name} target="_blank" rel="noopener noreferrer">
+                        <a key={social.name} href={social.url} className="w-12 h-12 rounded-full flex items-center justify-center !text-white bg-white/70 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg" title={social.name} target="_blank" rel="noopener noreferrer">
                             <i className={`${social.icon} text-lg`} />
                         </a>
                     ))}
                 </div>
 
-                <div className="mt-6 text-center text-xs text-slate-400 metadata">
-                    <p className="py-2">
-                        <a href={icp.url} target="_blank" rel="noopener noreferrer" className="inline-block py-2 px-4 hover:text-slate-600 transition-colors">{icp.number}</a>
-                    </p>
-                    <div className="flex items-center justify-center space-x-2 py-2">
+                <div className="mt-6 text-center text-xs text-slate-400 metadata flex flex-col space-y-1">
+                    <a href={icp.url} target="_blank" rel="noopener noreferrer" className="inline-block hover:text-slate-600 transition-colors">
+                        {icp.number}
+                    </a>
+                    <div className="flex items-center justify-center space-x-1">
                         {/* <img src="img/psb.png" alt="PSB" className="psbimg" /> */}
-                        <a
-                            href={psb.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block py-2 px-4 hover:text-slate-600 transition-colors"
-                        >
+                        <a href={psb.url} target="_blank" rel="noopener noreferrer" className="inline-block hover:text-slate-600 transition-colors">
                             {psb.number}
                         </a>
                     </div>

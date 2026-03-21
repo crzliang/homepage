@@ -1,11 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Tailwind 自定义工具：确保生成 .bg-hero（直接设置背景图像） */
 @layer utilities {
     .bg-hero {
-        background-image: url('/img/bg.webp');
+        background-image: url('/img/bg.jpg');
     }
 }
 
@@ -71,8 +69,7 @@ body,
         /* 创建新的隔离上下文，避免被父级 stacking context 阻断 */
         isolation: isolate;
         padding: 2.25rem 1.5rem;
-        /* 恢复为默认较安全的内距，避免在小屏产生滚动 */
-        border-radius: 16px;
+        /* border-radius removed to allow tailwind classes */
         box-shadow: 0 10px 36px rgba(2, 6, 23, 0.6);
     }
 }
@@ -220,7 +217,6 @@ body,
 @media (min-width:768px) {
     .profile-card {
         padding: 2.75rem 2rem;
-        border-radius: 20px;
     }
 
     .nickname {
