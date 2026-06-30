@@ -9,15 +9,7 @@ export default function App() {
                 </div>
             </div>
 
-            <footer className="py-6">
-                <div className="border-t border-white/10 mb-4 mx-5" />
-                <div className="flex items-center justify-center text-xs text-white gap-1 flex-wrap">
-                    <span>ICP备案：</span>
-                    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">桂ICP备2022011217号</a>
-                    <img src="https://qcloudimg.tencent-cloud.cn/raw/eed02831a0e201b8d794c8282c40cf2e.png" alt="" width="14" className="mx-1" />
-                    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=45032302000182" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">桂公网安备45032302000182号</a>
-                </div>
-            </footer>
+
         </div>
     )
 }
