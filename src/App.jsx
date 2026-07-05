@@ -9,7 +9,12 @@ export default function App() {
                 </div>
             </div>
 
-
+            <footer className="py-6">
+                <div className="border-t border-white/10 mb-4 mx-5" />
+                <div className="flex items-center justify-center text-xs text-white gap-1 flex-wrap">
+                    <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+                </div>
+            </footer>
         </div>
     )
 }
