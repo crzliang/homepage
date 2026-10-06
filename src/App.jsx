@@ -1,6 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { fetchKestrelCounts } from './kestrel'
 
 export default function App() {
+    const [counts, setCounts] = useState(null)
+
+    useEffect(() => {
+        let active = true
+        fetchKestrelCounts().then((value) => {
+            if (active && value) setCounts(value)
+        })
+        return () => {
+            active = false
+        }
+    }, [])
+
+    const siteUv = counts ? counts.site_uv : '—'
+    const sitePv = counts ? counts.site_pv : '—'
+
     return (
         <div className="min-h-screen w-full bg-hero bg-center bg-cover bg-fixed">
             <div className="min-h-screen flex items-center justify-center">
@@ -16,7 +32,9 @@ export default function App() {
                     <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">桂ICP备2022011217号</a>
                     <img src="https://qcloudimg.tencent-cloud.cn/raw/eed02831a0e201b8d794c8282c40cf2e.png" alt="" width="14" className="mx-1" />
                     <a href="https://beian.mps.gov.cn/#/query/webSearch?code=45032302000182" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">桂公网安备45032302000182号</a>
-                    <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+                    <span>本站访客 {siteUv}</span>
+                    <span className="mx-1">·</span>
+                    <span>本站访问 {sitePv}</span>
                 </div>
             </footer>
         </div>
